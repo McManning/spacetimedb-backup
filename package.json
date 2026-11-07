@@ -1,0 +1,42 @@
+{
+  "name": "spacetimedb-backup",
+  "version": "0.1.0",
+  "description": "Schema-driven backup and selective restore for every table in a SpacetimeDB TypeScript module.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "spacetimedb-backup": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./transfer": {
+      "types": "./dist/transfer.d.ts",
+      "import": "./dist/transfer.js",
+      "default": "./dist/transfer.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "prepare": "tsc -p tsconfig.lib.json",
+    "test": "node --test src/*.test.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "peerDependencies": {
+    "spacetimedb": "^2.13.0"
+  }
+}
