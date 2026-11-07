@@ -3,6 +3,21 @@
   "version": "0.1.0",
   "description": "Schema-driven backup and selective restore for every table in a SpacetimeDB TypeScript module.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McManning/spacetimedb-backup.git"
+  },
+  "homepage": "https://github.com/McManning/spacetimedb-backup#readme",
+  "bugs": {
+    "url": "https://github.com/McManning/spacetimedb-backup/issues"
+  },
+  "keywords": [
+    "spacetimedb",
+    "backup",
+    "restore",
+    "migration",
+    "cli"
+  ],
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -31,12 +46,19 @@
   "scripts": {
     "build": "tsc -p tsconfig.lib.json",
     "prepare": "tsc -p tsconfig.lib.json",
-    "test": "node --test src/*.test.ts"
+    "test": "node --test src/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "engines": {
     "node": ">=22.18"
   },
   "peerDependencies": {
     "spacetimedb": "^2.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "semantic-release": "^25.0.9",
+    "spacetimedb": "2.13.*",
+    "typescript": "~5.7.3"
   }
 }
